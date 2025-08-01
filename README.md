@@ -13,6 +13,10 @@ Aqui você encontrará:
 
 Organizar meu aprendizado e acompanhar meu progresso ao longo do curso, mantendo os códigos acessíveis para revisão e consultas futuras.
 
+## Explicação da utilização das pastas do repositório.
+
+O repositório será usado dividido em duas pastas principais para atividades, uma de atividades práticas em duplas ou em sala de aula, e outra pasta de atividades individuais, sendo essas as que serão enviadas pelo Google Classroom.
+
 ## Como usar
 
 Sinta-se à vontade para explorar, clonar ou se inspirar neste material para seus próprios estudos.
