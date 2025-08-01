@@ -23,7 +23,7 @@ Sinta-se à vontade para explorar, clonar ou se inspirar neste material para seu
 
 ```bash
 git clone https://github.com/AugustoDundes/curso-dev-js.git
-
+```
 
 # Linha do tempo de aulas:
 
