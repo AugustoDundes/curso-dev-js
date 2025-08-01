@@ -1,0 +1,157 @@
+
+C:\Users\48397002812>cd desktop
+
+C:\Users\48397002812\Desktop>mkdir public
+
+C:\Users\48397002812\Desktop>mkdir src
+
+C:\Users\48397002812\Desktop>mkdir docs
+
+C:\Users\48397002812\Desktop>cd public
+
+C:\Users\48397002812\Desktop\public>mkdir html
+
+C:\Users\48397002812\Desktop\public>mkdir css
+
+C:\Users\48397002812\Desktop\public>mkdir js
+
+C:\Users\48397002812\Desktop\public>mkdir media
+
+C:\Users\48397002812\Desktop\public>cd
+C:\Users\48397002812\Desktop\public
+
+C:\Users\48397002812\Desktop\public>cd media
+
+C:\Users\48397002812\Desktop\public\media>cd
+C:\Users\48397002812\Desktop\public\media
+
+C:\Users\48397002812\Desktop\public\media>cd ..
+
+C:\Users\48397002812\Desktop\public>cd html
+
+C:\Users\48397002812\Desktop\public\html>echo Projeto Responsivo > home.html
+
+C:\Users\48397002812\Desktop\public\html>cd ..
+
+C:\Users\48397002812\Desktop\public>cd css
+
+C:\Users\48397002812\Desktop\public\css>echo body {margin: 0; padding: 0; background-color: lightgray; } > theme.css
+
+C:\Users\48397002812\Desktop\public\css>cd ..
+
+C:\Users\48397002812\Desktop\public>cd media
+
+C:\Users\48397002812\Desktop\public\media>mkdir imagens
+
+C:\Users\48397002812\Desktop\public\media>mkdir fontes
+
+C:\Users\48397002812\Desktop\public\media>cd ..
+
+C:\Users\48397002812\Desktop\public>cd css
+
+C:\Users\48397002812\Desktop\public\css>copy theme.css ../../docs
+A sintaxe do comando está incorreta.
+
+C:\Users\48397002812\Desktop\public\css>copy theme.css ..\..\docs
+        1 arquivo(s) copiado(s).
+
+C:\Users\48397002812\Desktop\public\css>cd ..\js
+
+C:\Users\48397002812\Desktop\public\js>echo console.log("Utilitários carregados!"); > responsivo.js
+
+C:\Users\48397002812\Desktop\public\js>echo console.log("Site responsivo pronto!"); > responsivo.js
+
+C:\Users\48397002812\Desktop\public\js>echo console.log("Utilitários carregados!"); > utils.js
+
+C:\Users\48397002812\Desktop\public\js>rename utils.js helpers.js
+
+C:\Users\48397002812\Desktop\public\js>dir /s ..
+ O volume na unidade C é Windows
+ O Número de Série do Volume é 967E-A0A9
+
+ Pasta de C:\Users\48397002812\Desktop\public
+
+25/07/2025  20:29    <DIR>          .
+25/07/2025  20:29    <DIR>          ..
+25/07/2025  20:31    <DIR>          css
+25/07/2025  20:30    <DIR>          html
+25/07/2025  20:35    <DIR>          js
+25/07/2025  20:31    <DIR>          media
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\48397002812\Desktop\public\css
+
+25/07/2025  20:31    <DIR>          .
+25/07/2025  20:29    <DIR>          ..
+25/07/2025  20:31                62 theme.css
+               1 arquivo(s)             62 bytes
+
+ Pasta de C:\Users\48397002812\Desktop\public\html
+
+25/07/2025  20:30    <DIR>          .
+25/07/2025  20:29    <DIR>          ..
+25/07/2025  20:30                21 home.html
+               1 arquivo(s)             21 bytes
+
+ Pasta de C:\Users\48397002812\Desktop\public\js
+
+25/07/2025  20:35    <DIR>          .
+25/07/2025  20:29    <DIR>          ..
+25/07/2025  20:35                42 helpers.js
+25/07/2025  20:35                42 responsivo.js
+               2 arquivo(s)             84 bytes
+
+ Pasta de C:\Users\48397002812\Desktop\public\media
+
+25/07/2025  20:31    <DIR>          .
+25/07/2025  20:29    <DIR>          ..
+25/07/2025  20:31    <DIR>          fontes
+25/07/2025  20:31    <DIR>          imagens
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\48397002812\Desktop\public\media\fontes
+
+25/07/2025  20:31    <DIR>          .
+25/07/2025  20:31    <DIR>          ..
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\48397002812\Desktop\public\media\imagens
+
+25/07/2025  20:31    <DIR>          .
+25/07/2025  20:31    <DIR>          ..
+               0 arquivo(s)              0 bytes
+
+     Total de Arquivos na Lista:
+               4 arquivo(s)            167 bytes
+              20 pasta(s)   132.644.069.376 bytes disponíveis
+
+C:\Users\48397002812\Desktop\public\js>cd ..\..\docs
+
+C:\Users\48397002812\Desktop\docs>rm theme.css
+'rm' não é reconhecido como um comando interno
+ou externo, um programa operável ou um arquivo em lotes.
+
+C:\Users\48397002812\Desktop\docs>del theme.css
+
+C:\Users\48397002812\Desktop\docs>cd ..\public
+
+C:\Users\48397002812\Desktop\public>dir
+ O volume na unidade C é Windows
+ O Número de Série do Volume é 967E-A0A9
+
+ Pasta de C:\Users\48397002812\Desktop\public
+
+25/07/2025  20:29    <DIR>          .
+25/07/2025  20:29    <DIR>          ..
+25/07/2025  20:31    <DIR>          css
+25/07/2025  20:30    <DIR>          html
+25/07/2025  20:35    <DIR>          js
+25/07/2025  20:31    <DIR>          media
+               0 arquivo(s)              0 bytes
+               6 pasta(s)   132.246.134.784 bytes disponíveis
+
+C:\Users\48397002812\Desktop\public>cd html
+
+C:\Users\48397002812\Desktop\public\html>notepad home.html
+
+C:\Users\48397002812\Desktop\public\html>
