@@ -1,4 +1,4 @@
-Comandos utilizados:
+cd ..Comandos utilizados:
 git init
 git config user.name "Augusto Dundes"
 git config user.email "gutodundes@gmail.com"
