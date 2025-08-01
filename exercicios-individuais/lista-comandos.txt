@@ -1,0 +1,11 @@
+Comandos utilizados:
+git init
+git config user.name "Augusto Dundes"
+git config user.email "gutodundes@gmail.com"
+git branch -M main
+git add .
+git commit -m ""
+git checkout -b melhorias-estrutura
+git push origin main
+git remote add origin https://github.com/AugustoDundes/curso-dev-js.git
+git clone https://github.com/AugustoDundes/curso-dev-js.git
