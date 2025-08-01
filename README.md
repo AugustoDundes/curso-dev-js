@@ -23,3 +23,10 @@ Sinta-se à vontade para explorar, clonar ou se inspirar neste material para seu
 
 ```bash
 git clone https://github.com/AugustoDundes/curso-dev-js.git
+
+
+# Linha do tempo de aulas:
+
+## Aula 01/08:
+
+Nesta aula, iniciamos este repositório seguindo uma atividade enviada pelo Classroom, estamos configurando e se acostumando a realizar commits e utilizar mais o Git. Criamos alguns arquivos e fizemos a conexão com o repositório no GiHub.
