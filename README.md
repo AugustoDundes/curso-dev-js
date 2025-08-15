@@ -33,4 +33,8 @@ Nesta aula, iniciamos este repositório seguindo uma atividade enviada pelo Clas
 
 ## Aula 13/08:
 
-Neste aula realizamos algumas atividades sobre UX (User Experience) e UI (User Interface). Realizamos um escopo de tela de uma loja de açaí, contendo tudo que uma loja online deve ter, tudo isso no excalidraw, um site para criação de design. Depois de realizar o escopo, montamos a interface do site no Canva, utilizando imagens e templates.
+Neste aula realizamos algumas atividades sobre UX (User Experience) e UI (User Interface) junto ao professor. Realizamos um escopo de tela de uma loja de açaí, contendo tudo que uma loja online deve ter, tudo isso no excalidraw, um site para criação de design. Depois de realizar o escopo, montamos a interface do site no Canva, utilizando imagens e templates.
+
+## Aula 15/08:
+
+Neste aula realizamos uma atividade de protótipo de tela pelo canva apenas com a descrição do que o cliente queria (o meu ficou bem ruim).
