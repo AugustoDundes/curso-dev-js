@@ -30,3 +30,7 @@ git clone https://github.com/AugustoDundes/curso-dev-js.git
 ## Aula 01/08:
 
 Nesta aula, iniciamos este repositório seguindo uma atividade enviada pelo Classroom, estamos configurando e se acostumando a realizar commits e utilizar mais o Git. Criamos alguns arquivos e fizemos a conexão com o repositório no GiHub.
+
+## Aula 13/08:
+
+Neste aula realizamos algumas atividades sobre UX (User Experience) e UI (User Interface). Realizamos um escopo de tela de uma loja de açaí, contendo tudo que uma loja online deve ter, tudo isso no excalidraw, um site para criação de design. Depois de realizar o escopo, montamos a interface do site no Canva, utilizando imagens e templates.
