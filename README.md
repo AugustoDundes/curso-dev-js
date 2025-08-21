@@ -38,3 +38,7 @@ Neste aula realizamos algumas atividades sobre UX (User Experience) e UI (User I
 ## Aula 15/08:
 
 Neste aula realizamos uma atividade de protótipo de tela pelo canva apenas com a descrição do que o cliente queria (o meu ficou bem ruim).
+
+## Aula 20/08:
+
+Nesta aula realizamos uma página em HTML sobre as Tags do HTML, logo em seguida usamos as tags para criar um CV.
