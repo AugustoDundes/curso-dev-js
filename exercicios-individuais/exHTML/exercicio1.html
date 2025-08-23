@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículo Pessoal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        header a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        header a:hover {
+            text-decoration: underline;
+        }
+        #exercicio5 {
+            display: inline-block;
+        }
+        h1 {
+            color: #333;
+        }
+        li{
+            text-align: center;
+            list-style-position: inside;
+        }
+        #imagem {
+            position: fixed;
+            top: 100px; /* Ajuste para ficar logo abaixo do header */
+            right: 20px; /* Distância da borda direita */
+            width: 150px; /* Ajuste o tamanho da imagem, se necessário */
+            height: auto;
+        }   
+
+        #header {
+            color: white;
+            background-color: #333;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 40px;
+            text-align: center;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            width: 300px;
+            margin: 0 auto 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 id="header">Exercício 1</h1>
+        <a href="exercicio2.html">Exercício 2</a>
+        <a href="exercicio3.html">Exercício 3</a>
+        <a href="exercicio4.html">Exercício 4</a>
+        <div id="exercicio5">
+            <a href="exercicio5a.html">Exercício 5A</a>
+            <a href="exercicio5b.html">Exercício 5B</a>
+            <a href="exercicio5c.html">Exercício 5C</a>
+        </div>
+    </header>
+    <h1>Augusto Dundes Parucci</h1>
+    <img id="Imagem" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAA/FBMVEX/t03+34L////l5eXk5OTm5ubj4+Pu7u74+Pj19fXx8fHr6+v7+/t4Rxn9mxf+pCz/uE/+oyr+4YX/33v/tEj934b+z27/vE9wQBb/t07/v1j/+ev+pzH/3nj/tEDq5NXj5ez+oR5rPBT/nAD/sjr+qznu4sPn5eD757L74JH24af+2Hry7N7+x2P39vH+nxS3fDLBgTDopUWgaCf8pj3WlDqVXiGFTxeudS+tdS/yyp7y06v5xXn/wm/78dn646H+7sTr48z87sn95Jvx4LPv28X6y5P8w4qjZyL2xZXw0rLroTz+1KT/2pzp3NH8vmL/0I3648H/yXf959D2eYOsAAAQlUlEQVR4nOVdCXfaRhfFSDKbHCSQCxgDg42NnVCcpHGSOtjOZqdJ3cRp//9/+UYjIbTM8kYaIbXfa084ucdW5urNvHfnoqVSrVbrmqHV8aduaDX8UdMMPYRqQLTBRA1DazHRJg81A9RIi+qV/w+GuqYThpo/Pm03JappPpcAbURQPYk2PdT0UUMZqvtopV6vN2q1WgN/4o8m/mjiz/8QWsEngCRD9077rrbrJmNXAsUnqwVAyQmOoubuOp26f9rFqCGD6hitGNRllvOS5C4+BUtSD6FbzqFWQA5Ls15yW4f//Vq6vcVXZD/c1b1lpu+S8eFPCNoSoaaP6roeQxsitBlFNQnUiKEVfEivesSGKoW2kmixtEJoCbuFqbxbZC0vSZRSXjSE6t6/6f5sE48+wtDIr+hUtlK0hzenZ59vz8/P91mxM8xrDF6lSdXmxc1fR6hx8/7sfGfUxbHDjXNlzV+Ponl2i+Xp030hs3V0P6M8u4XqHGoGGr4/h5LzYjTJR8Dlsw6Xn89HUvTc2M9pHSqvpUg7/SSXPT/wPFUm1cK1VHU/XD7dSUPPjdEkl92TrlSqDc/kZ+cm9rW0moajdKK6NKNUG34apaeHo/s+GKpOJaBTpRofVdct6tWzbPxwjIYZBJzO6RYKpJphvM8yP9exr25/qCn22k73FfBz62k5vTatdZt5gvoxGiqRaoq9NnSqiJ4b+znsnrLmcK4sgSTOz04nSJHXpinx2hZqVmAout39s5vSeG3os2p+PsudpzcZpJo6r615mw9BQnL/bImK9tpM5TM0ynF06y/JLF6bVKXRo+hkP09+JEbnC7SuHlEBF0ET3UKN1zbJNYEBR5zHKlPAMaSaGq9tsRWCOLpnlEKyBa/tZlsE3ZozFI+sxkBT+zQflLZ5UYyeIkpDZ0s1BV7bdtbgJrrn2bqFdA6HWyboxnCbXtuyAII73RtQhWio8Nr0/PsgLUYfq1CpltVrOy+EoEdxK17bWRFzdE0xpdcmU2nQ6Vb7RIziB/lKI5yacXTbfSIa3WF4EkIEnPT+UCumygSxr8Zra7HRp4WmEMcnEyDV0ntt2nbFGi26n3P12uYFz1E3Rgu5biGTQx0VPkfd2BcX0NRe26LwOepG90wo1UKoXC0tSszEojvPyWszPpZhjrrxCeXjtWmlmKNudD+k99r8qblLQ4vTo4k4l6g08G6xLE0KXX1qxPoCU8BJ7A9vi6YVjnPwdRsVulRrJdFhiVLoJtEbWSsu1RIofPf0tGhS0bhV77WVp8yQGC1Ve20lKqQkuu9Ve20lI4jVKU+qyXttxmnpGHY/cKSavNeGSqJIw3HLWXzyXtukVK3Cj5BUE3ltPKnmXSt7VjQbSnQnwdTcpU7YXeDegqBFs6HGU0SXaloKr62IL2LEsY/AXlur1qJItRBaMj3jx2gRk2otmoCD+TTbGnOns/PLLx3oT3c/KvPatjNJXXoHjuMcgCneKvPatqDYfHoVHM4B+LdAO+BGwxc5DU/kNDypFkabeZukIXokLODvjRbr8dJZEBRSS+f5tvsYPZLGZ6CZ2j1V5LXlqUkp9AhFUL3pnqnx2lBuvYJBD07xE8xrE+4t8lmGHHpevQFQHKnZW5g5LEMBPWhJHS0FV7tpAK9Nryq/vAtAD1hSuzcaxGtrEanWikm1ADXfK2UIpUfSKCqp3Y+1qFRrJQWc2KdBn9Sxk6FHKIrqzS1Dqkl5bUhRoZGmB6F4C+0WjBySJYlUFJpU9AjFX7kUuwyplvDa1lKtQaRPIyJ9snvdqekRitySOmomxtuIsRDX0qylNAs9EryS2p1k74daplKamR4JdkntTtJ7bbqP6ukZqqFX4dWb7qmU1xZu8xs0ZbNQRo9QZNWb7nuxTyPsFmm+NlRKj0fRY5jCawvnULodKqdHKFp0ircyXpvZogk4Sd2dCz0S9JJ6ayakWqsVEXBCnwbBC02mvgcIaklFmb22OZBh3vQq9JLaRfJeW+wrDBDDLdAjFJP1pgvx2iIiB39GpY/4xoMt0aNTHMWlmjv8CIvod08UASdwg7dIj1CMq9TuMLPXxmW4XXokYiXVZSjjtelJAcdmWAA9Ep04Q4HXFtRSv80b0eZvMC7NL4oenqjRHE40Wps3NPjegsawOHpMhiCvLSzVODkslB6FodBra7V8qdZqma7IaXkCbo3W4vfCFksvyXBBxhtItZYr1eo+Cxc1hV5brNIUTM9lmKg0Gb22OMOiCcZzCOsW9KtNdmkdv4wMAV5bQqo1ArS5KDnDBVWqhQSc0GublJzhJLPXVj6G0UozAXhtvEeY7erlYxjLIcxro9ZS/V9WS8NSLV5L/xvdIq3X9m9gCPDaNlLNrJtRAVd6hiZNqtU3qMhrQ1clZ3iFsnltxt3xSafEDDsnx3eSXltMwBlt2w67zZ1yMewcTNt2nSLVEl5bs+Z/+FJt/df6/UW7PQ0bXKVi2Pn1yWH74r4ZjJdItRgLrtemLS/stn34JGQ2l4lh59mTNp5jF3ODfp03oB8aVziFbbs9fVZKhs/w6bfx6K6kvbZAwKET2z60McdD8Dq0rIwEhAfYMFyP7sSAeW2UWjo8djOIj2IHcpfH0Or1nJdOr5eeJDlChX+ENcPO2HYZ4tEdD7lOFI/hN3eStt2DTNfX0XEY9gbP3/SP+v23lyk5Wr2Xv/Vx7D0f9IQMOz2cPnz28eguvqX22r5M3UngcgwKKpth78VRf8+N/tFr3gjZB3BeB0d4wT6A45fRKUmg7ZaJL0KvLSHVPAFXHdgeP3c9+wWVybD32hsdiaOX8hR7L482B+i/Zh7A8crolJx7sojsQTUu1TALE+C1oVfeIiRTtW1zc9j7LUQQU3RkJ6rlHIUP0P+NRdErCVPbJ+j2i1fIa/PURyjyugV61W6vFyJu/ETbMBj2LiPj29tj54ARvdfRAxxdMo7gkJJue+vHO/evog9WBHttuptD90AeQ5tctcti+GYvNsCXckm0XsZO0d4bNsPOgUMI2naYIctra+IgWicifWouWh9M28Fybk/J95N0hsnxsWcZ4xRFZznnHDmdzq+OY6/Z4T+mVj3BoukJuKbAa/uyqVf4P/JFOp1h73l8fMwUsBjGf3+v/5x+BGfnF6fi+GMiyzBUSyk36nH74buLNTu35LhHfwZmeCTJMD4J9vp/MBiSMfhlhpTSi3epvTasaWy/2JAcssf3h3qGewyGHk1Pr3nz1NU0Aq+Npbxbh+tO4f7PG18yh31JhskDMGapz5BMLW8NHbY0di3V+HuLr37babcFObxMDFCyXcSbBWbIahckvBrjLcOvKLXXpi2PXcXWtm0Bw8ogUUtfyHWL3otELR3wfn7aXlNsH08MgddmNnyRExFwBK0/Tg/X4mHK21Ykin2fOz5KOPED8NvNuuO7qrTmSjUzItXWAs4Uem3zC0+YinJoxQbIk870wMI9ypCv+6YuP1JtLpYUqQZ/2rXx7RhSaTDFiGzrv02hvN+GT1JfoIlIx3c3iMff6hSpBvfadPTlwivMts3f3vf+7AcjPEpB0KUYnKR+/0/BEbxGgfeGXxDkurZmSOQEHz5qXl/4SRQYGNbgbd+L19wqyKF4+ebIO8LbgahOeSlsX1ybsfEmWAiva6uilT9RhSZUb3D5/O3vly9T2xhW78/L398+vwRsoD2tfLxiSDWpZypo6Op4Kp6lHkc3snhRluUeAfCDJIXHV7Vwb0/htfkomgxcjo5sA8gzcAqPne8Icg+p/1bJmhG7+XeNkndNorvB8UWZGDoXx84dNXEJAQd9XhtaPGR1QlWG9fU7MjhSTeK6thD6V/F+9zqc+4bGlWosr82kCrg1+m1cNLEgnL+IpjQDqdYKSTXTBHttUVR7Vx6G43d1vlRL9bw247RMDCWf7sl9ilKQw+8lYngn8cRyqlSjCrhleRjOFoDxQry2GJpObeYRY5FUS/luhFVp2sUPuXcjgF/N+VCWaeo8yrxbnS3VEmhp2sX4nRFOnJGUaiFU5t0Ik9IwvDMEUk3qHtINisrCcGbIvBshEGWmJ9XMqFQLo7WylJoftfXIav54A6mWRKWeq1+ShTh+EEq1tG+Wm8yKJkdidpPl3QhcAYfKsUUci6WajNcWRusPZViIzj10vECvLSzg/inDNB3/NIRSTc5rC6NlKDWzLO8hFQq4Egg3LNnk3kNqCKRaFC1BNR2f1iJSjS7gNqjkm3TQj6IJViwEkGqcK/cS9wFHUaNwO8p5iHW+qFRLohWRVIuhtaL7xWwOkWohVPbNcuZ9wffIPoKkWiqvbf0S4GKn6WzIvuoiq9fmo+ixyCQ6K5hUS+e1+X9dABuGJRewgwYmWz5em4/CkmgdygWIIl6FMKmW7T2kJmglWs4TmYBdcTsbpnoPKdhrW6Mw6WadSBA8AREc30OlWtxrw1wpUo2NHkCGU7HaYIJt2DIcByJSJNVSem3BvbPATZRlAwnaMIKzdwgq1RLdwhdlYAEH7BhAikCCzt8NsFQLM5Tw2kJfoQLbPogikCAuM3CpltZrC+qPcQdtiodCgrA+4RrdKLwpzMdr2wg49AjNoqiiwqoonqPX1CezKfba9BAKtd0EfRF+58lcRqql9drCKFS8YfXGnqmHFvQandmkLiPVUnltsXQi+F7YcugFx4YncPxQk5Jq6b22sKFxD6Y4sJxk98f8wBdZjR+RePGp8doi6Aq+VRxYlZNwIu2TCpwfrjKG5CvjOV6bL9VAKPohs1W0rIFzQrYRJ85A6mZa52DpjYEiysQorFvo9Ak7P5DbDUtuBtcErXlVVqoBvDaYgJsP8t/wY4JaVVaqZfHaoujSypuiYy3Iv0YRZXQ0hdemM1D3pNVkJ6o0wcGymkKqZfHa4le7zX/kab45B3NwX1DltSUEnCHRNGRjfD1PJ9UyeW0JtPGY19c141VaqQb32uKJowu4d/lQHF+hakqpls1rowi4SQ4l1RnfpZdqGb02GrpSncbxaq6ll2oMrw0q4BoUFM9UpW8KwDv6Kk2qGUw0KeA8lNMteM+pi09Y3UBLhWmcXc+594Uq9trADtzPipq+4Tg/U7lqGby2GhS9VzBVndnjssoWZdICjuW1saQaBdV9Aeeiw1VGjs5stUBapKZERdm2vDY2usjC0ZldL0IdQFPSLdJ6bRG0tUFNNFmN03HE+fte3cgvLYNUU+G1cdD68t6SJumMe38t6srGwPfaQFKNhZJ0IuPnaiZB0hmPVz+9b7pkRVmOXlscbURQrWr+XI1BJAm9Bsq8+NR7ba0kqkdQc353/wOz5LyK0xnPDu6/VUWiTAbleG1rQRSVajGZJIs25ncPK2uGp6wbATHH5Tb7sXq4W25+livKUgu4pBMlI9UYqD9hWxveN3cPV49/X1+79zEfXF9fr+4f/rnBddeQuK1gK14bFdUSAq6xKRm1YJGE50YTIS30s1lEWd5eGxTNKL+yoHlWmrq/9mP1h4sGogyAGiA0r24RRv1FQkebPFRZt8jktbEFXF2PyK9atDPTRZkiqabWays5ylDeklKtRkucRk2nRk2naqmm2muTXpLcxadgSar32sQCDlJWFUo1odeWUcAlJVV2NLWA4zpRUgKOMjVjAi6KxqamWqmmwmtLLeBiaD5SLTevrYwCTkGlSUo12UojI9WkBdz/AD9cQob3PFYrAAAAAElFTkSuQmCC" alt="Foto profissional">
+    <p>Desenvolvedor Front-End com experiência em criação de interfaces responsivas e interativas.</p>
+    <h2>Formação Acadêmica</h2>
+    <ul>
+        <li>Bacharel em Ciência da Computação - Universidade Exemplo</li>
+    </ul>
+    <h2>Habilidades</h2>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>React</li>
+    </ul>
+    <h2>Resumo profissional</h2>
+    <p>Desenvolvedor Front-End com mais de 5 anos de experiência em desenvolvimento de aplicações web. Especializado em criar interfaces de usuário responsivas e acessíveis, utilizando as melhores práticas de desenvolvimento.</p>
+
+    <h2>Certificações</h2>
+    <ul>
+        <li>Certificação em Desenvolvimento Web - Curso Exemplo</li>
+        <li>Certificação em JavaScript Avançado - Curso Exemplo</li>
+    </ul>
+</body>
+</html>
