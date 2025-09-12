@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo CDN</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <style>
+
+        .alt500{
+            height: 500px;
+        }
+
+        .alt100{
+            height: 100px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Exemplos Breakpoints</h1>
+
+    <!-- p.d-none.d-sm-block.bg-primary -->
+    <p class="d-none d-sm-block bg-primary">Visível a partir de SM >= 576px</p>
+    
+    <!-- p.d-none.d-md-block.bg-success -->
+    <p class="d-none d-md-block bg-success">Visível a partir de MD >= 768px</p>
+
+    <!-- p.d-none.d-lg-block.bg-dark -->
+    <p class="d-none d-lg-block bg-dark text-white">Visível a partir de LG >= 992px</p>
+
+    <!-- p.d-none.d-xl-block.bg-danger -->
+    <p class="d-none d-xl-block bg-danger">Visível a partir de XL >= 1200px</p>
+
+    <!-- p.d-none.d-xxl-block.bg-info -->
+    <p class="d-none d-xxl-block bg-info">Visível a partir de XXL >= 1400px</p>
+
+    <h1>Exemplos de Grids</h1>
+
+    <!-- div.container -->
+     <!-- div.container-fluid -->
+    <div class="container">
+        <!-- div.row>div.col.alt100*2 -->
+        <div class="row">
+            <div class="col alt100 bg-success"></div>
+            <div class="col alt100 bg-danger"></div>
+            <div class="col alt100 bg-warning"></div>
+            <div class="col alt100 bg-success"></div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row">
+            <!-- div.col-12.alt100.bg-danger -->
+            <div class="col-12 alt100 bg-danger"></div>
+            <!-- div.col-12.col-lg-3.alt500.bg-warning -->
+            <div class="col-12 col-lg-3 alt500 bg-warning"></div>
+            <!-- div.col-12.col-lg-9.alt500.bg-primary -->
+            <div class="col-12 col-lg-9 alt500 bg-primary"></div>
+            <!-- div.col-12.alt100.bg-success -->
+            <div class="col-12 alt100 bg-success"></div>
+        </div>
+    </div>
+
+
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
