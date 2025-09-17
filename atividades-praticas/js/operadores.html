@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operadores</title>
+</head>
+<body>
+    
+    <p>Aperte F12 para ver os resultados</p>
+    <script>
+        // Operadores Aritméticos
+        let a = prompt("Digite um número:");
+        a = Number(a); // Convertendo a string para número
+        let b = 5;
+
+        console.log("Soma: " + (a + b)); // 15
+        console.log("Subtração: " + (a - b)); // 5
+        console.log("Multiplicação: " + (a * b)); // 50
+        console.log("Divisão: " + (a / b)); // 2
+        console.log("Módulo(Resto da divisão): " + (a % b)); // 0
+
+        // Operadores de Atribuição
+        let c = 20;
+        c += 5; // c = c + 5
+        console.log("Atribuição com soma: " + c); // 25
+
+        c -= 10; // c = c - 10
+        console.log("Atribuição com subtração: " + c); // 15
+
+        c *= 2; // c = c * 2
+        console.log("Atribuição com multiplicação: " + c); // 30
+
+        c /= 3; // c = c / 3
+        console.log("Atribuição com divisão: " + c); // 10
+
+        // Operadores de Comparação
+        console.log("Igualdade (==): " + (a == b)); // false
+        console.log("Desigualdade (!=): " + (a != b)); // true
+        console.log("Maior que (>): " + (a > b)); // true
+        console.log("Menor que (<): " + (a < b)); // false
+        console.log("Maior ou igual (>=): " + (a >= b)); // true
+        console.log("Menor ou igual (<=): " + (a <= b)); // false
+
+        // Operadores Lógicos
+        let x = true;
+        let y = false;
+
+        console.log("E lógico (&&): " + (x && y)); // false
+        console.log("Ou lógico (||): " + (x || y)); // true
+        console.log("Negação lógica (!): " + (!x)); // false
+
+        // Operador Ternário
+        let idade = prompt("Digite sua idade:");
+        idade = Number(idade);
+        let podeVotar = (idade >= 18) ? "Pode votar" : "Não pode votar";
+        console.log(podeVotar); // Pode votar ou Não pode votar
+
+        // Operador de String
+        let nome = prompt("Digite seu nome:");
+        let sobrenome = prompt("Digite seu sobrenome:");
+        let nomeCompleto = nome + " " + sobrenome;
+        console.log("Nome Completo: " + nomeCompleto); 
+        console.log("Repetição de String: " + nome.repeat(3)); // Repete o nome 3 vezes
+        console.log("Comprimento da String [nome]: " + nome.length); // Mostra o comprimento do nome
+        console.log("Primeira letra do nome: " + nome.charAt(0)); // Mostra a primeira letra do nome
+        console.log("Nome em maiúsculas: " + nome.toUpperCase()); // Nome em maiúsculas
+        console.log("Nome em minúsculas: " + nome.toLowerCase()); // Nome em minúsculas
+        console.log("Sobrenome com espaços removidos: " + sobrenome.trim()); // Remove espaços extras
+        console.log("Nome substituído: " + nome.replace(/a/gi, "@")); // Substitui 'a' por '@'
+        console.log("Nome dividido em array: " + nome.split("")); // Divide o nome em um array de caracteres
+        console.log("Nome indexOf 'a': " + nome.toLowerCase().indexOf("a")); // Mostra o índice da primeira ocorrência de 'a'
+        console.log("Nome lastIndexOf 'a': " + nome.lastIndexOf("a")); // Mostra o índice da última ocorrência de 'a'
+        console.log("Nome includes 'a': " + nome.toLowerCase().includes("a")); // Verifica se o nome inclui 'a'
+        console.log("Nome startsWith 'A': " + nome.startsWith("A")); // Verifica se o nome começa com 'A'
+        console.log("Nome endsWith 'o': " + nome.endsWith("o")); // Verifica se o nome termina com 'o'
+        console.log("Nome slice(1,4): " + nome.slice(1,4)); // Extrai uma parte do nome
+        console.log("Nome substring(1,4): " + nome.substring(1,4)); // Extrai uma parte do nome
+        console.log("Nome charCodeAt(0): " + nome.charCodeAt(0)); // Mostra o código Unicode da primeira letra
+    </script>
+</body>
+</html>
