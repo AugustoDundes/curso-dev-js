@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade de JS</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            transition: background-color 2s ease-in-out, color 2s ease-in-out;
+        }
+
+        #mensagem {
+            opacity: 0;
+            font-size: 24px;
+            text-align: center;
+            margin-top: 20px;
+            transition: opacity 2s ease-in-out;
+        }
+
+        #questoes {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #botao {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="mensagem">Bem-vindo à sua atividade de JavaScript!</div>
+    <button id="botao">Iniciar Atividade</button>
+    <div id="questoes">
+        <div class="atv1">
+            <h2>Atividade 1</h2>
+            <h3>Operadores básicos (+,-,*,/)</h3>
+            <input type="number" id="num1" placeholder="Número 1">
+            <input type="number" id="num2" placeholder="Número 2">
+            <br><br>
+            <button onclick="calcular()">Calcular</button>
+            <p id="resultado"></p>
+            <button class="iratv2" onclick="atv2()">Ir para atividade 2</button>
+        </div>
+        <br><br>
+        <div class="atv2">
+            <h2></h2>
+        </div>
+    </div>
+
+    <script>
+        
+        // Faz a mensagem aparecer gradualmente
+        window.onload = function() {
+            const mensagem = document.getElementById('mensagem');
+            setTimeout(() => {
+                mensagem.style.opacity = 1;
+            }, 500); // Delay de 500ms antes de iniciar o efeito
+        };
+
+        // Botão para clarear a tela e liberar as questões
+        const botao = document.getElementById('botao');
+        
+        botao.addEventListener('click', () => {
+            document.body.style.backgroundColor = 'white';
+            document.body.style.color = 'black';
+            const atv2 = document.querySelector('.atv2');
+            atv2.style.display = 'none';
+            setTimeout(() => {
+                document.getElementById('questoes').style.display = 'block';
+                botao.style.display = 'none'; // Esconde o botão após o clique
+                
+                mensagem.style.display = 'none'; // Esconde a mensagem após o clique
+            }, 2000); // Libera as questões após o efeito de clareamento
+        });
+
+        // Função para calcular operações básicas
+        function calcular() {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            if (isNaN(num1) || isNaN(num2)) {
+                document.getElementById('resultado').innerText = 'Por favor, insira números válidos.';
+                return;
+            }
+            const soma = num1 + num2;
+            const subtracao = num1 - num2;
+            const multiplicacao = num1 * num2;
+            const divisao = num2 !== 0 ? (num1 / num2).toFixed(2) : 'Indefinido (divisão por zero)';
+            document.getElementById('resultado').innerHTML = `
+                Soma: ${soma} <br>
+                Subtração: ${subtracao} <br>
+                Multiplicação: ${multiplicacao} <br>
+                Divisão: ${divisao}
+            `;
+        }
+
+        function atv2(){
+            const atv1 = document.querySelector('.atv1');
+            const atv2 = document.querySelector('.atv2');
+            atv2.style.display = 'block';
+            atv1.style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>
