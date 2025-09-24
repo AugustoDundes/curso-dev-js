@@ -51,8 +51,82 @@
         </div>
         <br><br>
         <div class="atv2">
-            <h2></h2>
+            <h2>Sucessor e antecessor</h2>
+            <label>informe um número: </label><input type="number" id="numero" placeholder="Número">
+            <button onclick="calcular2()">Calcular</button>
+            <p id="resultado2"></p>
+            <button class="iratv3" onclick="atv3()">Ir para atividade 3</button>
         </div>
+        <br><br>
+        <div class="atv3">
+            <h2>Dobro, triplo e raiz quadrada</h2>
+            <input type="text" id="num3" placeholder="Número">
+            <button onclick="calcular3()">Calcular</button>
+            <p id="resultado3"></p>
+            <button class="iratv4" onclick="atv4()">Ir para atividade 4</button>
+        </div>
+        <br><br>
+        <div class="atv4">
+            <h2>Média de três notas</h2>
+            <label>Informe a primeira nota: </label><input type="number" id="nota1" placeholder="Nota 1"><br><br>
+            <label>Informe a segunda nota: </label><input type="number" id="nota2" placeholder="Nota 2"><br><br>
+            <label>Informe a terceira nota: </label><input type="number" id="nota3" placeholder="Nota 3"><br><br>
+            <button onclick="calcularMedia()">Calcular Média</button>
+            <p id="resultadoMedia"></p>
+            <button class="iratv5" onclick="atv5()">Ir para atividade 5</button>
+        </div>
+        <br><br>
+        <div class="atv5">
+            <h2>Conversor de medidas</h2>
+            <input type="text" id="medida" placeholder="Medida em metros">
+            <button onclick="calcularMedida()">Converter para centímetros e milímetros</button>
+            <p id="resultadoMedida"></p>
+            <button class="iratv6" onclick="atv6()">Ir para atividade 6</button>
+        </div>
+        <br><br>
+        <div class="atv6">
+            <h2>Conversor de moeda</h2>
+            <input type="text" id="valorDolar" placeholder="Valor em Dólar">
+            <button onclick="converterMoeda()">Converter para Real</button>
+            <p id="resultadoMoeda"></p>
+            <button class="iratv7" onclick="atv7()">Ir para atividade 7</button>
+        </div>
+        <br><br>
+        <div class="atv7">
+            <h2>Desconto de produto</h2>
+            <input type="text" id="valorProduto" placeholder="Valor do Produto">
+            <input type="text" id="percentualDesconto" placeholder="Percentual de Desconto">
+            <button onclick="calcularDesconto()">Calcular Desconto</button>
+            <p id="resultadoDesconto"></p>
+            <button class="iratv8" onclick="atv8()">Ir para atividade 8</button>
+        </div>
+        <br><br>
+        <div class="atv8">
+            <h2>Maior de idade</h2>
+            <input type="text" id="idade" placeholder="Idade">
+            <button onclick="verificarIdade()">Verificar</button>
+            <p id="resultadoIdade"></p>
+            <button class="iratv9" onclick="atv9()">Ir para atividade 9</button>
+        </div>
+        <br><br>
+        <div class="atv9">
+            <h2>Área de tinta para pintar</h2>
+            <input type="text" id="area" placeholder="Área em m²">
+            <button onclick="calcularTinta()">Calcular Litros de Tinta</button>
+            <p id="resultadoTinta"></p>
+            <button class="iratv10" onclick="atv10()">Ir para atividade 10</button>
+        </div>
+        <br><br>
+        <div class="atv10">
+            <h2>IMC</h2>
+            <input type="text" id="peso" placeholder="Peso em kg">
+            <input type="text" id="altura" placeholder="Altura em metros">
+            <button onclick="calcularIMC()">Calcular IMC</button>
+            <p id="resultadoIMC"></p>
+            
+            
+        </div>
+        <br><br>
     </div>
 
     <script>
@@ -73,6 +147,22 @@
             document.body.style.color = 'black';
             const atv2 = document.querySelector('.atv2');
             atv2.style.display = 'none';
+            const atv3 = document.querySelector('.atv3');
+            atv3.style.display = 'none';
+            const atv4 = document.querySelector('.atv4');
+            atv4.style.display = 'none';
+            const atv5 = document.querySelector('.atv5');
+            atv5.style.display = 'none';
+            const atv6 = document.querySelector('.atv6');
+            atv6.style.display = 'none';
+            const atv7 = document.querySelector('.atv7');
+            atv7.style.display = 'none';
+            const atv8 = document.querySelector('.atv8');
+            atv8.style.display = 'none';
+            const atv9 = document.querySelector('.atv9');
+            atv9.style.display = 'none';
+            const atv10 = document.querySelector('.atv10');
+            atv10.style.display = 'none';
             setTimeout(() => {
                 document.getElementById('questoes').style.display = 'block';
                 botao.style.display = 'none'; // Esconde o botão após o clique
@@ -85,6 +175,7 @@
         function calcular() {
             const num1 = parseFloat(document.getElementById('num1').value);
             const num2 = parseFloat(document.getElementById('num2').value);
+            console.log(num1, num2);
             if (isNaN(num1) || isNaN(num2)) {
                 document.getElementById('resultado').innerText = 'Por favor, insira números válidos.';
                 return;
@@ -107,6 +198,199 @@
             atv2.style.display = 'block';
             atv1.style.display = 'none';
         }
+
+        function atv3(){
+            const atv2 = document.querySelector('.atv2');
+            const atv3 = document.querySelector('.atv3');
+            atv3.style.display = 'block';
+            atv2.style.display = 'none';
+        }
+
+        function atv4(){
+            const atv3 = document.querySelector('.atv3');
+            const atv4 = document.querySelector('.atv4');
+            atv4.style.display = 'block';
+            atv3.style.display = 'none';
+        }
+
+        function atv10(){
+            const atv9 = document.querySelector('.atv9');
+            const atv10 = document.querySelector('.atv10');
+            atv10.style.display = 'block';
+            atv9.style.display = 'none';
+        }
+
+        function atv5(){
+            const atv4 = document.querySelector('.atv4');
+            const atv5 = document.querySelector('.atv5');
+            atv5.style.display = 'block';
+            atv4.style.display = 'none';
+        }
+
+        function atv6(){
+            const atv5 = document.querySelector('.atv5');
+            const atv6 = document.querySelector('.atv6');
+            atv6.style.display = 'block';
+            atv5.style.display = 'none';
+        }
+
+        function atv7(){
+            const atv6 = document.querySelector('.atv6');
+            const atv7 = document.querySelector('.atv7');
+            atv7.style.display = 'block';
+            atv6.style.display = 'none';
+        }
+
+        function atv8(){
+            const atv7 = document.querySelector('.atv7');
+            const atv8 = document.querySelector('.atv8');
+            atv8.style.display = 'block';
+            atv7.style.display = 'none';
+        }
+
+        function atv9(){
+            const atv8 = document.querySelector('.atv8');
+            const atv9 = document.querySelector('.atv9');
+            atv9.style.display = 'block';
+            atv8.style.display = 'none';
+        }
+
+        // Função para calcular sucessor e antecessor
+        function calcular2() {
+            const numero = parseInt(document.getElementById('numero').value);
+            if (isNaN(numero)) {
+                alert('Por favor, insira um número válido.');
+                return;
+            }
+            const sucessor = numero + 1;
+            const antecessor = numero - 1;
+            document.getElementById('resultado2').innerHTML = `
+                Sucessor: ${sucessor} <br>
+                Antecessor: ${antecessor}
+            `;
+        }
+        // Função para calcular dobro, triplo e raiz quadrada
+        function calcular3() {
+            const num3 = parseFloat(document.getElementById('num3').value);
+            if (isNaN(num3)) {
+                alert('Por favor, insira um número válido.');
+                return;
+            }
+            const dobro = num3 * 2;
+            const triplo = num3 * 3;
+            const raizQuadrada = Math.sqrt(num3).toFixed(2);
+            document.getElementById('resultado3').innerHTML = `
+                Dobro: ${dobro} <br>
+                Triplo: ${triplo} <br>
+                Raiz Quadrada: ${raizQuadrada}
+            `;
+        }
+
+        // Função para calcular a média de três notas
+        function calcularMedia() {
+            const nota1 = parseFloat(document.getElementById('nota1').value);
+            const nota2 = parseFloat(document.getElementById('nota2').value);
+            const nota3 = parseFloat(document.getElementById('nota3').value);
+            if (isNaN(nota1) || isNaN(nota2) || isNaN(nota3)) {
+                alert('Por favor, insira notas válidas.');
+                return;
+            }
+            const media = ((nota1 + nota2 + nota3) / 3).toFixed(2);
+            document.getElementById('resultadoMedia').innerText = `Média: ${media}`;
+        }
+
+        // Função para converter metros em centímetros e milímetros
+        function calcularMedida() {
+            const medida = parseFloat(document.getElementById('medida').value);
+            if (isNaN(medida)) {
+                alert('Por favor, insira uma medida válida em metros.');
+                return;
+            }
+            const centimetros = (medida * 100).toFixed(2);
+            const milimetros = (medida * 1000).toFixed(2);
+            document.getElementById('resultadoMedida').innerHTML = `
+                Centímetros: ${centimetros} cm <br>
+                Milímetros: ${milimetros} mm
+            `;
+        }
+
+        // Função para converter dólar em real
+        function converterMoeda() {
+            const valorDolar = parseFloat(document.getElementById('valorDolar').value);
+            const taxaCambio = 5.25; // Exemplo de taxa de câmbio
+            if (isNaN(valorDolar)) {
+                alert('Por favor, insira um valor válido em dólar.');
+                return;
+            }
+            const valorReal = (valorDolar * taxaCambio).toFixed(2);
+            document.getElementById('resultadoMoeda').innerText = `Valor em Real: R$ ${valorReal}`;
+        }
+
+        // Função para calcular desconto de um produto
+        function calcularDesconto() {
+            const valorProduto = parseFloat(document.getElementById('valorProduto').value);
+            const percentualDesconto = parseFloat(document.getElementById('percentualDesconto').value);
+            if (isNaN(valorProduto) || isNaN(percentualDesconto)) {
+                alert('Por favor, insira valores válidos para o produto e o desconto.');
+                return;
+            }
+            const valorDesconto = (valorProduto * (percentualDesconto / 100)).toFixed(2);
+            const valorFinal = (valorProduto - valorDesconto).toFixed(2);
+            document.getElementById('resultadoDesconto').innerHTML = `
+                Valor do Desconto: R$ ${valorDesconto} <br>
+                Valor Final: R$ ${valorFinal}
+            `;
+        }
+
+        // Função para verificar se a pessoa é maior de idade
+        function verificarIdade() {
+            const idade = parseInt(document.getElementById('idade').value);
+            if (isNaN(idade)) {
+                alert('Por favor, insira uma idade válida.');
+                return;
+            }
+            const resultado = idade >= 18 ? 'Maior de idade' : 'Menor de idade';
+            document.getElementById('resultadoIdade').innerText = resultado;
+        }
+
+        // Função para calcular a quantidade de tinta necessária para pintar uma área
+        function calcularTinta() {
+            const area = parseFloat(document.getElementById('area').value);
+            const coberturaPorLitro = 3; // 1 litro para cada 3 m²
+            if (isNaN(area)) {
+                alert('Por favor, insira uma área válida em m².');
+                return;
+            }
+            const litrosNecessarios = (area / coberturaPorLitro).toFixed(2);
+            document.getElementById('resultadoTinta').innerText = `Litros de tinta necessários: ${litrosNecessarios} L`;
+        }
+
+        // Função para calcular o IMC
+        function calcularIMC() {
+            const peso = parseFloat(document.getElementById('peso').value);
+            const altura = parseFloat(document.getElementById('altura').value);
+            if (isNaN(peso) || isNaN(altura) || altura <= 0) {
+                alert('Por favor, insira valores válidos para peso e altura.');
+                return;
+            }
+            const imc = (peso / (altura * altura)).toFixed(2);
+            let classificacao = '';
+            if (imc < 18.5) {
+                classificacao = 'Abaixo do peso';
+            } else if (imc < 24.9) {
+                classificacao = 'Peso normal';
+            } else if (imc < 29.9) {
+                classificacao = 'Sobrepeso';
+            } else {
+                classificacao = 'Obesidade';
+            }
+            document.getElementById('resultadoIMC').innerHTML = `
+                IMC: ${imc} <br>
+                Classificação: ${classificacao}
+            `;
+        }
+
+
     </script>
 
 </body>
