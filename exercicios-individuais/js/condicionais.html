@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade condicionais</title>
+</head>
+<body>
+    
+    <div class="questões">
+        <div class="atv1">
+            <h1>Par ou ímpar</h1>
+            <input type="text" id="numero" placeholder="Digite um número">
+            <button onclick="verificarParImpar()">Verificar</button>
+            <p id="resultadoParImpar"></p>
+        </div>
+        <br><br>
+        <hr>
+        <div class="atv2">
+            <h2>Cálculo de frete</h2>
+            <p>Regras:
+                Acima de 200 reais, frete grátis.
+                Entre 100 e 199,99 reais, frete de 15 reais.
+                Abaixo de 100 reais, frete de 25 reais.
+            </p>
+            <input type="text" id="valorCompra" placeholder="Valor da compra">
+            <button onclick="calcularFrete()">Calcular Frete</button>
+            <p id="resultadoFrete"></p>
+        </div>
+        <br><br>
+        <hr>
+        <div class="atv3">
+            <h2>Bônus de funcionário</h2>
+            <input type="text" id="salario" placeholder="Salário">
+            <input type="text" id="tempoServico" placeholder="Tempo de serviço (anos)">
+            <button onclick="calcularBonus()">Calcular Bônus</button>
+            <p id="resultadoBonus"></p>
+        </div>
+        <br><br>
+        <hr>
+        <div class="atv4">
+            <h2>Triagem para doar sangue</h2>
+            <select name="idade" id="idade">Tem mais de 18 anos?
+                <option value="default" disabled selected>--</option>
+                <option value="sim">Sim</option>
+                <option value="nao">Não</option>
+            </select>
+            <select name="peso" id="peso">Pesa mais de 50kg?
+                <option value="default" disabled selected>--</option>
+                <option value="sim">Sim</option>
+                <option value="nao">Não</option>
+            </select>
+            <select name="saude" id="saude">Não está gripado ou resfriado?
+                <option value="default" disabled selected>--</option>
+                <option value="sim">Sim</option>
+                <option value="nao">Não</option>
+            </select>
+            <button onclick="verificarDoacao()">Verificar</button>
+            <p id="resultadoDoacao"></p>
+        </div>
+    </div>
+
+    <script>
+        function verificarDoacao() {
+            let idade = document.getElementById("idade").value;
+            let peso = document.getElementById("peso").value;
+            let saude = document.getElementById("saude").value;
+            let resultado = document.getElementById("resultadoDoacao");
+
+            if (idade === "sim" && peso === "sim" && saude === "sim") {
+                resultado.textContent = "Você está apto a doar sangue.";
+            }
+            else if (idade === "default" || peso === "default" || saude === "default") {
+                resultado.textContent = "Por favor, responda todas as perguntas.";
+            } else {
+                resultado.textContent = "Você não está apto a doar sangue.";
+            }
+        }
+
+        function calcularBonus() {
+            let salario = parseFloat(document.getElementById("salario").value);
+            let tempoServico = parseInt(document.getElementById("tempoServico").value);
+            let resultado = document.getElementById("resultadoBonus");
+            let bonus;
+
+            if (isNaN(salario) || isNaN(tempoServico) || salario < 0 || tempoServico < 0) {
+                resultado.textContent = "Por favor, insira valores válidos para salário e tempo de serviço.";
+                return;
+            }
+
+            if (tempoServico < 5) {
+                bonus = 0;
+                resultado.textContent = "O funcionário não tem direito a bônus.";
+            } else if (tempoServico <= 5) {
+                bonus = salario * 0.05;
+                resultado.textContent = "O bônus do funcionário é R$ " + bonus.toFixed(2) + " totalizando R$ " + (salario + bonus).toFixed(2);
+            }
+        }
+
+        function calcularFrete() {
+            let valorCompra = parseFloat(document.getElementById("valorCompra").value);
+            let resultado = document.getElementById("resultadoFrete");
+            let frete;
+
+            if (isNaN(valorCompra) || valorCompra < 0) {
+                resultado.textContent = "Por favor, insira um valor de compra válido.";
+                return;
+            }
+
+            if (valorCompra > 200) {
+                frete = 0;
+            } else if (valorCompra >= 100) {
+                frete = 15;
+            } else {
+                frete = 25;
+            }
+
+            resultado.textContent = "O valor do frete é R$ " + frete.toFixed(2);
+        }
+
+        function verificarParImpar() {
+            let numero = parseInt(document.getElementById("numero").value);
+            let resultado = document.getElementById("resultadoParImpar");
+
+            if (isNaN(numero)) {
+                resultado.textContent = "Por favor, insira um número válido.";
+            } else if (numero % 2 === 0) {
+                resultado.textContent = "O número " + numero + " é par.";
+            } else {
+                resultado.textContent = "O número " + numero + " é ímpar.";
+            }
+        }
+    </script>
+</body>
+</html>
