@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays e objetos em JavaScript</title>
+</head>
+<body style="display: block; text-align: center; font-family: Arial, sans-serif; margin-top: 50px;">
+    <div class="titulos">
+        <h1 class="titulo">Arrays e Objetos em JavaScript</h1>
+    </div>
+
+    <div class="subtitulo" style="color: red; font-weight: bold; font-size: 20px; margin-bottom: 20px;">
+        <h3>Aperte F12 para ver os resultados</h3>
+    </div>
+
+    <script>
+
+        const titulo = document.querySelector('.titulo');
+        //Definindo variável i para controlar a posição do caractere que será adicionado ao título
+        let i = 0;
+        //Guardando o texto original do título em uma variável e limpando o conteúdo do título
+        const texto = titulo.innerHTML;
+        titulo.innerHTML = '';
+        //Título aparece gradualmente -- efeito máquina de escrever -- texto está vazio, e vai sendo preenchido letra por letra na posição i, a cada 100 milissegundos. O .charAt(i) pega o caractere na posição i do texto original.
+        function escrever() {
+            if (i < texto.length) {
+                titulo.innerHTML += texto.charAt(i);
+                i++;
+                setTimeout(escrever, 100);
+            }
+        }
+        escrever();
+
+        //Piscar letra do subtítulo
+        const subtitulo = document.querySelector('.subtitulo');
+        setInterval(() => {
+            const currentColor = getComputedStyle(subtitulo).color;
+            if (currentColor === 'rgb(255, 0, 0)') { // vermelho
+                subtitulo.style.color = 'black';
+            } else {
+                subtitulo.style.color = 'red';
+            }
+        }, 400);
+
+
+        
+
+
+        // Criando um array
+        const frutas = ['maçã', 'banana', 'laranja'];
+        console.log('Array de frutas:', frutas);
+
+        // Acessando elementos do array
+        console.log('Primeira fruta:', frutas[0]);
+        console.log('Segunda fruta:', frutas[1]);
+
+        // Adicionando um elemento ao array
+        frutas.push('uva');
+        console.log('Array após adicionar uva:', frutas);
+
+        frutas.slice(1, 1); // Remove 1 elemento a partir do índice 1 (banana)
+        console.log('Array após remover banana:', frutas);
+
+        frutas.splice(2, 0, 'morango'); // Adiciona 'morango' na posição 2 sem remover nenhum elemento
+        console.log('Array após adicionar morango na posição 2:', frutas);
+
+        frutas.pop(); // Remove o último elemento do array
+        console.log('Array após remover o último elemento:', frutas);
+        frutas.shift(); // Remove o primeiro elemento do array
+        console.log('Array após remover o primeiro elemento:', frutas);
+        frutas.unshift('abacaxi'); // Adiciona 'abacaxi' no início do array
+        console.log('Array após adicionar abacaxi no início:', frutas);
+        console.log('Tamanho do array:', frutas.length);
+
+
+
+        // Criando um objeto
+        const pessoa = {
+            nome: 'João',
+            idade: 30,
+            profissao: 'Desenvolvedor'
+        };
+        console.log('Objeto pessoa:', pessoa);
+
+        // Acessando propriedades do objeto
+        console.log('Nome da pessoa:', pessoa.nome);
+        console.log('Idade da pessoa:', pessoa.idade);
+
+        // Adicionando uma nova propriedade ao objeto
+        pessoa.cidade = 'São Paulo';
+        console.log('Objeto após adicionar cidade:', pessoa);
+
+        delete pessoa.profissao; // Remove a propriedade 'profissao'
+        console.log('Objeto após remover profissao:', pessoa);
+
+        // Iterando sobre as propriedades do objeto
+        for (let chave in pessoa) {
+            console.log(`${chave}: ${pessoa[chave]}`);
+        }
+    </script>
+</body>
+</html>
