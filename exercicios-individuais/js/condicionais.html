@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atividade condicionais</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 <body>
     
-    <div class="questões">
+    <div class="container text-center mt-5">
+        <h1 class="titulo">Atividades de Condicionais</h1>
         <div class="atv1">
-            <h1>Par ou ímpar</h1>
+            <h1 class="">Par ou ímpar</h1>
             <input type="text" id="numero" placeholder="Digite um número">
-            <button onclick="verificarParImpar()">Verificar</button>
+            <button onclick="verificarParImpar()" class="btn btn-success">Verificar</button>
             <p id="resultadoParImpar"></p>
         </div>
         <br><br>
@@ -24,7 +26,7 @@
                 Abaixo de 100 reais, frete de 25 reais.
             </p>
             <input type="text" id="valorCompra" placeholder="Valor da compra">
-            <button onclick="calcularFrete()">Calcular Frete</button>
+            <button onclick="calcularFrete()" class="btn btn-success">Calcular Frete</button>
             <p id="resultadoFrete"></p>
         </div>
         <br><br>
@@ -33,7 +35,7 @@
             <h2>Bônus de funcionário</h2>
             <input type="text" id="salario" placeholder="Salário">
             <input type="text" id="tempoServico" placeholder="Tempo de serviço (anos)">
-            <button onclick="calcularBonus()">Calcular Bônus</button>
+            <button onclick="calcularBonus()" class="btn btn-success">Calcular Bônus</button>
             <p id="resultadoBonus"></p>
         </div>
         <br><br>
@@ -55,7 +57,7 @@
                 <option value="sim">Sim</option>
                 <option value="nao">Não</option>
             </select>
-            <button onclick="verificarDoacao()">Verificar</button>
+            <button onclick="verificarDoacao()" class="btn btn-success">Verificar</button>
             <p id="resultadoDoacao"></p>
         </div>
     </div>
