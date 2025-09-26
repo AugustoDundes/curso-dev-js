@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade de arrays e objetos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container text-center mt-5">
+        <h1 class="titulo">Arrays e Objetos em JavaScript</h1>
+        <button onclick="escrever2()" class="btn btn-primary">Reiniciar animação</button>
+    </div>
+
+    <div class="container mt-5">
+        <h2>Adicione suas músicas favoritas na playlist:</h2>
+        <input type="text" id="musicaInput" placeholder="Digite o nome da música">
+        <button onclick="adicionarMusica()" class="btn btn-success">Adicionar Música</button>
+    
+
+    <div>
+        <h2>Lista de música:</h2>
+        <ul id="playlist"></ul>
+    </div>
+    <br><br>
+    <hr>
+
+    <div class="filmes">
+        <h2>Informações do Filme:</h2>
+        <button onclick="adicionarFilme()" class="btn btn-primary mb-3">Inserir Filme</button>
+        <div id="infoFilme"></div>
+    </div>
+
+</div>
+    <script>
+
+        const playlistElement = document.getElementById('playlist');
+        const playlist = [];
+        function adicionarMusica() {
+            const musicaInput = document.getElementById('musicaInput');
+            const musica = musicaInput.value.trim();
+            if (musica) {
+                playlist.push(musica);
+                atualizarPlaylist();
+                musicaInput.value = '';
+                musicaInput.focus();
+            }
+        }
+
+        function atualizarPlaylist() {
+            playlistElement.innerHTML = '';
+            playlist.forEach((musica, index) => {
+                const li = document.createElement('li');
+                li.textContent = musica + ' ';
+                
+                const removerBtn = document.createElement('button');
+                removerBtn.textContent = 'Remover';
+                removerBtn.className = 'btn btn-danger btn-sm';
+                removerBtn.onclick = () => {
+                    playlist.splice(index, 1);
+                    atualizarPlaylist();
+                };
+
+                const editarBtn = document.createElement('button');
+                editarBtn.textContent = 'Editar';
+                editarBtn.className = 'btn btn-warning btn-sm mx-2';
+                editarBtn.onclick = () => {
+                    const novaMusica = prompt('Edite o nome da música:', musica);
+                    if (novaMusica !== null && novaMusica.trim() !== '') {
+                        playlist[index] = novaMusica.trim();
+                        atualizarPlaylist();
+                    }
+                };
+                li.appendChild(editarBtn);
+                
+                li.appendChild(removerBtn);
+                playlistElement.appendChild(li);
+            });
+        }
+
+        const infoFilmeElement = document.getElementById('infoFilme');
+        const filme = {
+            titulo: [],
+            diretor: [],
+            ano: [],
+            personagens: []
+        };
+        function adicionarFilme() {
+            const titulo = prompt('Digite o título do filme:');
+            const diretor = prompt('Digite o nome do diretor:');
+            const ano = prompt('Digite o ano de lançamento:');
+            const personagensInput = prompt('Digite os personagens principais (separados por vírgula):');
+            if (titulo && diretor && ano && personagensInput) {
+                filme.titulo.push(titulo.trim());
+                filme.diretor.push(diretor.trim());
+                filme.ano.push(ano.trim());
+                filme.personagens.push(personagensInput.split(',').map(p => p.trim()));
+                atualizarInfoFilme();
+            }
+        }
+        function atualizarInfoFilme() {
+            infoFilmeElement.innerHTML = '';
+            filme.titulo.forEach((titulo, index) => {
+                const div = document.createElement('div');
+                div.className = 'mb-3 p-3 border';
+                div.innerHTML = `
+                    <h3>${titulo}</h3>
+                    <p><strong>Diretor:</strong> ${filme.diretor[index]}</p>
+                    <p><strong>Ano:</strong> ${filme.ano[index]}</p>
+                    <p><strong>Personagens:</strong> ${filme.personagens[index].join(', ')}</p>
+                `;
+                infoFilmeElement.appendChild(div);
+            });
+        }
+
+        const titulo = document.querySelector('.titulo');
+        let i = 0;
+        const texto = titulo.innerHTML;
+        titulo.innerHTML = '';
+        function escrever() {
+            if (i < texto.length) {
+                titulo.innerHTML += texto.charAt(i);
+                i++;
+                setTimeout(escrever, 100);
+            }
+        }
+
+        function escrever2() {
+            i = 0;
+            titulo.innerHTML = '';
+            escrever();
+        }
+        escrever();
+    </script>
+</body>
+</html>
