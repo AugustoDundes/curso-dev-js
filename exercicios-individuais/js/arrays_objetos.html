@@ -109,6 +109,34 @@
                     <p><strong>Ano:</strong> ${filme.ano[index]}</p>
                     <p><strong>Personagens:</strong> ${filme.personagens[index].join(', ')}</p>
                 `;
+                const removerBtn = document.createElement('button');
+                removerBtn.textContent = 'Remover Filme';
+                removerBtn.className = 'btn btn-danger btn-sm';
+                removerBtn.onclick = () => {
+                    filme.titulo.splice(index, 1);
+                    filme.diretor.splice(index, 1);
+                    filme.ano.splice(index, 1);
+                    filme.personagens.splice(index, 1);
+                    atualizarInfoFilme();
+                };
+                const editarBtn = document.createElement('button');
+                editarBtn.textContent = 'Editar Filme';
+                editarBtn.className = 'btn btn-warning btn-sm mx-2';
+                editarBtn.onclick = () => {
+                    const novoTitulo = prompt('Edite o título do filme:', titulo);
+                    const novoDiretor = prompt('Edite o nome do diretor:', filme.diretor[index]);
+                    const novoAno = prompt('Edite o ano de lançamento:', filme.ano[index]);
+                    const novosPersonagensInput = prompt('Edite os personagens principais (separados por vírgula):', filme.personagens[index].join(', '));
+                    if (novoTitulo && novoDiretor && novoAno && novosPersonagensInput) {
+                        filme.titulo[index] = novoTitulo.trim();
+                        filme.diretor[index] = novoDiretor.trim();
+                        filme.ano[index] = novoAno.trim();
+                        filme.personagens[index] = novosPersonagensInput.split(',').map(p => p.trim());
+                        atualizarInfoFilme();
+                    }
+                };
+                div.appendChild(editarBtn);
+                div.appendChild(removerBtn);
                 infoFilmeElement.appendChild(div);
             });
         }
