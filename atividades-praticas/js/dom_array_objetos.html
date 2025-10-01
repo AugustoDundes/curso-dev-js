@@ -62,8 +62,68 @@
         const iptCurso = document.querySelector('#curso');
         const btnSalvar = document.querySelector('#btn-salvar');
         const btnCancelar = document.querySelector('#btn-cancelar');
-
-        
+        const btnProximo = document.querySelector('#btn-proximo');
+        const btnAnterior = document.querySelector('#btn-anterior');
+        const fichaAlunos = document.querySelector('.ficha-alunos');
+        const cardCadastro = document.querySelector('#card-cadastro');
+        const alunoNome = document.querySelector('#aluno-nome');
+        const alunoIdade = document.querySelector('#aluno-idade');
+        const alunoCurso = document.querySelector('#aluno-curso');
+        let alunos = [];
+        let indiceAtual = -1;
+        function atualizarFicha() {
+            if (alunos.length === 0) {
+                alunoNome.textContent = 'Nenhum aluno cadastrado';
+                alunoIdade.textContent = '';
+                alunoCurso.textContent = '';
+                btnAnterior.disabled = true;
+                btnProximo.disabled = true;
+                return;
+            }
+            const aluno = alunos[indiceAtual];
+            alunoNome.textContent = aluno.nome;
+            alunoIdade.textContent = aluno.idade;
+            alunoCurso.textContent = aluno.curso;
+            btnAnterior.disabled = indiceAtual === 0;
+            btnProximo.disabled = indiceAtual === alunos.length - 1;
+            iptNome.value = '';
+            iptIdade.value = '';
+            iptCurso.value = '';
+        }
+        btnSalvar.addEventListener('click', () => {
+            const nome = iptNome.value.trim();
+            const idade = parseInt(iptIdade.value);
+            const curso = iptCurso.value.trim();
+            if (nome && idade > 0 && curso) {
+                alunos.push({ nome, idade, curso });
+                indiceAtual = alunos.length - 1;
+                atualizarFicha();
+                fichaAlunos.classList.remove('d-none');
+                cardCadastro.classList.add('');
+                iptNome.value = '';
+                iptIdade.value = '';
+                iptCurso.value = '';
+            } else {
+                alert('Por favor, preencha todos os campos corretamente.');
+            }
+        });
+        btnCancelar.addEventListener('click', () => {
+            iptNome.value = '';
+            iptIdade.value = '';
+            iptCurso.value = '';
+        });
+        btnProximo.addEventListener('click', () => {
+            if (indiceAtual < alunos.length - 1) {
+                indiceAtual++;
+                atualizarFicha();
+            }
+        });
+        btnAnterior.addEventListener('click', () => {
+            if (indiceAtual > 0) {
+                indiceAtual--;
+                atualizarFicha();
+            }
+        });
     </script>
 </body>
 

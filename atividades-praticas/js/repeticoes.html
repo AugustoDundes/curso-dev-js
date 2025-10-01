@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade sobre estruturas de repetições em JavaScript</title>
+</head>
+<body>
+    
+    <h2>Aperte F12</h2>
+    
+    <script>
+        const nomes = ['Ana', 'Bruno', 'Carlos', 'Diana', 'Eduardo'];
+        const numeros = [1, 2, 3, 4, 5];
+        const alunos = [
+            { nome: 'Ana', idade: 20 },
+            { nome: 'Bruno', idade: 22 },
+            { nome: 'Carlos', idade: 19 },
+            { nome: 'Diana', idade: 21 },
+            { nome: 'Eduardo', idade: 23 }
+        ];
+        for (let i = 0; i < nomes.length; i++) {
+            console.log(`Olá, ${nomes[i]}!`);
+        }
+        console.log('---');
+        let contador = 1;   
+        while (contador <= 5) {
+            console.log(`Contador está em: ${contador}`);
+            contador++;
+        }
+    </script>
+
+</body>
+</html>
