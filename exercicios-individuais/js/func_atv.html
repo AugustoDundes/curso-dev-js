@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="atv1">
+        <h2>Atividade 1: Cálculo de Área</h2>
+        <input type="text" id="largura" placeholder="Largura">
+        <input type="text" id="altura" placeholder="Altura">
+        <button onclick="calcularArea()">Calcular</button>
+        <p class="resultado"></p>
+    </div>
+
+    <br><hr><hr><br>
+
+    <div class="atv2">
+        <h2>Insira um número para verificar se ele é par</h2>
+        <input type="text" id="numero" placeholder="Número">
+        <button onclick="verificarPar()">Verificar</button>
+        <p class="resultado2"></p>
+    </div>
+
+    <br><hr><hr><br>
+
+    <div class="atv3">
+        <h2>Cálculo de Célcius para Fahrenheit</h2>
+        <input type="text" id="celsius" placeholder="Celsius">
+        <button onclick="converterCelsiusParaFahrenheit()">Converter</button>
+        <p class="resultado3"></p>
+    </div>
+
+    <script>
+
+
+        const celsiusInput = document.getElementById('celsius');
+        const resultadoCelsius = document.querySelector('.resultado3');
+        function converterCelsiusParaFahrenheit() {
+            const celsius = parseFloat(celsiusInput.value);
+            if (isNaN(celsius)) {
+                resultadoCelsius.textContent = 'Por favor, insira um valor numérico válido.';
+                return;
+            }
+            const fahrenheit = (celsius * 9/5) + 32;
+            resultadoCelsius.textContent = `${celsius}°C é igual a ${fahrenheit.toFixed(2)}°F.`;
+        };
+
+
+        const numeroInput = document.getElementById('numero');
+        const resultadoPar = document.querySelector('.resultado2');
+        function verificarPar() {
+            const numero = parseInt(numeroInput.value);
+            if (isNaN(numero)) {
+                resultado.textContent('Por favor, insira um número válido.');
+                return;
+            }
+            if (numero % 2 === 0) {
+                resultadoPar.textContent = `O número ${numero} é par.`;
+            } else {
+                resultadoPar.textContent= `O número ${numero} é ímpar.`;
+            }
+        };
+
+
+
+        const larguraInput = document.getElementById('largura');
+const alturaInput = document.getElementById('altura');
+
+const calcularArea = () => {
+    const largura = parseFloat(larguraInput.value);
+    const altura = parseFloat(alturaInput.value);
+    const resultado = document.querySelector('.resultado');
+
+    if (isNaN(largura) || isNaN(altura)) {
+        resultado.textContent = 'Por favor, insira valores numéricos válidos.';
+        return;
+    }
+    const area = largura * altura;
+    resultado.textContent = `A área é ${area.toFixed(2)}`;
+};
+
+
+
+
+    </script>
+
+</body>
+</html>
