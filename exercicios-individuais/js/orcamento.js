@@ -15,7 +15,7 @@
 //    - Se for 15 dias ou mais, a taxa é zero.
 // Desconto: O desconto percentual é aplicado sobre a soma de todos os custos únicos (páginas + design + taxa de urgência).
 
-// Seleciona os elementos do formulário
+
 const qtdPaginasInput = document.getElementById("qtd-paginas");
 const prazoEntregaInput = document.getElementById("prazo-entrega");
 const descontoInput = document.getElementById("desconto");
@@ -27,24 +27,19 @@ const resumoUrgencia = document.getElementById("resumo-urgencia");
 const resumoDesconto = document.getElementById("resumo-desconto");
 const resumoTotal = document.getElementById("resumo-total");
 
-// Constantes de preços
 const PRECO_POR_PAGINA = 500;
 const CUSTO_ADICIONAL_DESIGN = 1000;
 
-// Função para calcular o orçamento
 function calcularOrcamento() {
     const qtdPaginas = parseInt(qtdPaginasInput.value) || 0;
     const prazoEntrega = parseInt(prazoEntregaInput.value) || 0;
     const desconto = parseFloat(descontoInput.value) || 0;
     const incluiDesign = incluiDesignCheckbox.checked;
 
-    // Cálculo do subtotal
     const subtotal = qtdPaginas * PRECO_POR_PAGINA;
 
-    // Cálculo do adicional de design
     const adicionalDesign = incluiDesign ? CUSTO_ADICIONAL_DESIGN : 0;
 
-    // Cálculo da taxa de urgência
     let taxaUrgencia = 0;
     if (prazoEntrega < 5) {
         taxaUrgencia = 0.1 * (subtotal + adicionalDesign);
@@ -52,14 +47,11 @@ function calcularOrcamento() {
         taxaUrgencia = 0.05 * (subtotal + adicionalDesign);
     }
 
-    // Cálculo do desconto
     const totalSemDesconto = subtotal + adicionalDesign + taxaUrgencia;
     const valorDesconto = (desconto / 100) * totalSemDesconto;
 
-    // Cálculo do total
     const total = totalSemDesconto - valorDesconto;
 
-    // Atualiza os valores no resumo
     resumoSubtotal.textContent = `R$ ${subtotal.toFixed(2)}`;
     resumoAdicional.textContent = `R$ ${adicionalDesign.toFixed(2)}`;
     resumoUrgencia.textContent = `+ R$ ${taxaUrgencia.toFixed(2)}`;
@@ -67,11 +59,9 @@ function calcularOrcamento() {
     resumoTotal.textContent = `R$ ${total.toFixed(2)}`;
 }
 
-// Adiciona eventos para recalcular o orçamento em tempo real
 qtdPaginasInput.addEventListener("input", calcularOrcamento);
 prazoEntregaInput.addEventListener("input", calcularOrcamento);
 descontoInput.addEventListener("input", calcularOrcamento);
 incluiDesignCheckbox.addEventListener("change", calcularOrcamento);
 
-// Calcula o orçamento inicial
 calcularOrcamento();
