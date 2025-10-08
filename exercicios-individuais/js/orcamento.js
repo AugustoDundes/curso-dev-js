@@ -36,6 +36,19 @@ function calcularOrcamento() {
     const desconto = parseFloat(descontoInput.value) || 0;
     const incluiDesign = incluiDesignCheckbox.checked;
 
+    if (qtdPaginas < 1 || desconto < 0) {
+        alert("Por favor, insira valores válidos.");
+        qtdPaginasInput.value = 1;
+        descontoInput.value = 0;
+        return;
+    }
+
+    if (prazoEntrega < 1) {
+        alert("Por favor, insira um prazo de entrega válido. Não realizamos entregas em menos de 1 dia.");
+        prazoEntregaInput.value = 1;
+        return;
+    }
+
     const subtotal = qtdPaginas * PRECO_POR_PAGINA;
 
     const adicionalDesign = incluiDesign ? CUSTO_ADICIONAL_DESIGN : 0;
