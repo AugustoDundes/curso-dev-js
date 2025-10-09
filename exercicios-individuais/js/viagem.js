@@ -10,6 +10,7 @@ function calcularCustoPorPessoa(custoTotal, numViajantes) {
     return custoTotal / numViajantes;
 }
 
+
 function animarNumero(elemento, valorFinal) {
     const duracao = 500;
     const incremento = valorFinal / (duracao / 20); 
@@ -21,7 +22,7 @@ function animarNumero(elemento, valorFinal) {
             valorAtual = valorFinal;
             clearInterval(animacao);
         }
-        elemento.textContent = `R$ ${valorAtual.toFixed(2)}`;
+        elemento.textContent = formatarMoeda(valorAtual);
     }, 16);
 }
 
@@ -50,6 +51,10 @@ function calcularCustos(animarSomentePorPessoa = false) {
         animarNumero(custoTotalElemento, custoTotal);
         animarNumero(custoPorPessoaElemento, custoPorPessoa);
     }
+}
+
+function formatarMoeda(valor) {
+    return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 }
 
 document.getElementById("distancia").addEventListener("input", () => calcularCustos());
