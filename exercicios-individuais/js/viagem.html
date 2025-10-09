@@ -1,0 +1,77 @@
+<!-- Você e seus amigos estão planejando uma viagem de carro (uma "road trip") para o fim de semana! Para organizar as finanças e dividir os custos de forma justa, o grupo precisa de uma ferramenta online que calcule o gasto total com combustível e quanto cada pessoa deverá pagar. Sua missão é construir essa ferramenta do zero.
+
+1. Requisitos de Interface (O que construir no viagem.html)
+
+Estrutura:
+Título: "Calculadora de Custo de Viagem".
+Um campo para "Distância (km)" (sugestão: <input type="number">).
+Um campo para "Consumo do veículo (km/L)" (sugestão: <input type="number">).
+Um campo para "Preço do combustível (R$)" (sugestão: <input type="number">).
+Um campo para "Nº de Viajantes" (sugestão: <input type="number">).
+Área de Resultados: A interface deve ter um local claro para exibir os dois resultados principais:
+O "Custo Total com Combustível".
+O "Custo por Pessoa".
+
+Estilização: Utilize as classes do Bootstrap para estilizar todos os elementos (ex: .container, .card, .form-label, .form-control, .text-center, etc.) e garantir que a página tenha uma aparência profissional e seja responsiva.
+
+2. Requisitos de Funcionalidade (O que fazer no viagem.js)
+Cálculo em Tempo Real: O cálculo dos custos deve ser refeito e os resultados na tela devem ser atualizados instantaneamente sempre que o usuário alterar o valor de qualquer um dos campos do formulário.
+Lógica Organizada: Seu código JavaScript deve ser organizado em funções especialistas:
+Crie funções "puras" e separadas para cada cálculo principal (ex: uma função para calcular o custo do combustível, outra para o custo por pessoa).
+Essas funções devem receber os dados que precisam via parâmetros e devolver o resultado com return.
+Crie uma função principal (a "orquestradora") que será chamada pelos eventos. A responsabilidade dela é ler os valores da tela, chamar as funções de cálculo e, por fim, atualizar a interface com os resultados.
+Fórmulas Necessárias
+Litros Necessários = Distância Total / Consumo do Veículo
+Custo Total Combustível = Litros Necessários * Preço do Combustível
+Custo por Pessoa = Custo Total Combustível / Número de Viajantes -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Custo de Viagem</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Calculadora de Custo de Viagem</h1>
+        <div class="card p-4">
+            <form>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="distancia" class="form-label">Distância (km)</label>
+                            <input type="number" id="distancia" class="form-control" placeholder="Digite a distância em km">
+                        </div>
+                        <div class="mb-3">
+                            <label for="consumo" class="form-label">Consumo do veículo (km/L)</label>
+                            <input type="number" id="consumo" class="form-control" placeholder="Digite o consumo do veículo">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="precoCombustivel" class="form-label">Preço do combustível (R$)</label>
+                            <input type="number" id="precoCombustivel" class="form-control" placeholder="Digite o preço do combustível">
+                        </div>
+                        <div class="mb-3">
+                            <label for="numViajantes" class="form-label">Nº de Viajantes</label>
+                            <input type="number" id="numViajantes" class="form-control" placeholder="Digite o número de viajantes">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="card mt-4 p-4">
+            <h2 class="text-center">Resultados</h2>
+            <p class="text-center">Custo Total com Combustível: <span id="custoTotal" class="fw-bold">R$ 0,00</span></p>
+            <p class="text-center">Custo por Pessoa: <span id="custoPorPessoa" class="fw-bold">R$ 0,00</span></p>
+        </div>
+    </div>
+    <div class="text-center mt-4">
+        <small class="text-muted">Desenvolvido por Augusto Dundes <span class="seu-nome"></span></small>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="viagem.js"></script>
+</body>
+</html>
