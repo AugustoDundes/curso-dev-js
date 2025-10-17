@@ -1,5 +1,5 @@
 const usuarios = JSON.parse(localStorage.getItem('cadastro-usuario')) || [];
-//Elementos
+
 const telaLista = document.getElementById("tela-lista");
 const telaCadastro = document.getElementById("tela-cadastro");
 const telaDetalhes = document.getElementById("tela-detalhes");
@@ -8,8 +8,9 @@ const btnVoltarLista = document.getElementById("btn-voltar-lista");
 const Form = document.getElementById("user-form");
 const userTableBody = document.getElementById("user-table-body");
 const tabelaBody = document.querySelector("#user-table-body");
+const searchInput = document.getElementById("search-input");
 
-//funções
+
 
 function irparacadastro(){
     telaCadastro.classList.remove("d-none");
@@ -22,9 +23,23 @@ function irparalista(){
     renderizarUsuarios();
 }
 
-function salvarUsuario(){
 
-    const id = Number(inputId.value);
+
+function removerUsuario(id){
+    const index = usuarios.findIndex(user => user.id === id);
+    if(index !== -1){
+        usuarios.splice(index, 1);
+        salvarNoStorage();
+        renderizarUsuarios();
+    }
+}
+
+let usuarioEmEdicaoId = null;
+
+function salvarUsuario(event) {
+    event.preventDefault(); 
+
+    const id = usuarioEmEdicaoId || Date.now(); 
     const nome = inputNome.value;
     const sobrenome = inputSobrenome.value;
     const email = inputEmail.value;
@@ -38,23 +53,55 @@ function salvarUsuario(){
     const cep = inputCep.value;
 
     const usuario = {
-        id: id || Date.now(),
-        nome: nome,
-        sobrenome : sobrenome,
-        email: email,
-        obs: obs,
-        rua: rua,
-        numero: numero,
-        bairro: bairro,
-        complemento: complemento,
-        cidade: cidade,
-        estado: estado,
-        cep: cep
+        id,
+        nome,
+        sobrenome,
+        email,
+        obs,
+        rua,
+        numero,
+        bairro,
+        complemento,
+        cidade,
+        estado,
+        cep,
+    };
+
+    if (usuarioEmEdicaoId) {
+        const index = usuarios.findIndex(user => user.id === usuarioEmEdicaoId);
+        if (index !== -1) {
+            usuarios[index] = usuario;
+        }
+    } else {
+        usuarios.push(usuario);
     }
 
-    usuarios.push(usuario);
-    console.log(usuario);
     salvarNoStorage();
+    renderizarUsuarios();
+
+    Form.reset();
+    usuarioEmEdicaoId = null;
+    irparalista();
+}
+
+function editarUsuario(id) {
+    const user = usuarios.find(user => user.id === id);
+    if (user) {
+        usuarioEmEdicaoId = id; 
+        inputId.value = user.id;
+        inputNome.value = user.nome;
+        inputSobrenome.value = user.sobrenome;
+        inputEmail.value = user.email;
+        inputObs.value = user.obs;
+        inputRua.value = user.rua;
+        inputNumero.value = user.numero;
+        inputBairro.value = user.bairro;
+        inputComplemento.value = user.complemento;
+        inputCidade.value = user.cidade;
+        inputEstado.value = user.estado;
+        inputCep.value = user.cep;
+        irparacadastro();
+    }
 }
 
 function renderizarUsuarios(){
@@ -62,13 +109,12 @@ function renderizarUsuarios(){
     usuarios.forEach(user => {
         const tr = document.createElement("tr");
         tr.innerHTML = `
-            <td>${user.id}</td>
             <td>${user.nome}</td>
             <td>${user.sobrenome}</td>
             <td>${user.email}</td>
             <td>
-                <button class="btn btn-warning" data-id="${user.id}">Editar</button>
-                <button class="btn btn-danger" data-id="${user.id}">Excluir</button>
+                <button class="btn btn-warning" onclick="editarUsuario(${user.id})">Editar</button>
+                <button class="btn btn-danger" onclick="removerUsuario(${user.id})">Excluir</button>
             </td>
             `;
         tabelaBody.appendChild(tr);
@@ -83,10 +129,11 @@ function inicializacao(){
     btnAdicionar.addEventListener("click", irparacadastro);
     btnVoltarLista.addEventListener("click", irparalista);
     Form.addEventListener("submit", salvarUsuario);
+
+    renderizarUsuarios();
 }
 inicializacao();
 
-//inputs usuario
 const inputNome = document.getElementById("user-nome");
 const inputId = document.getElementById("user-id");
 const inputSobrenome = document.getElementById("user-sobrenome");
