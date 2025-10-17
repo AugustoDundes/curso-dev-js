@@ -9,8 +9,21 @@ const Form = document.getElementById("user-form");
 const userTableBody = document.getElementById("user-table-body");
 const tabelaBody = document.querySelector("#user-table-body");
 const searchInput = document.getElementById("search-input");
+const btnDownload = document.getElementById("btn-download");
+const btnUpload = document.getElementById("btn-upload");
 
 
+function filtrarUsuarios() {
+    const termoBusca = searchInput.value.toLowerCase(); 
+    const usuariosFiltrados = usuarios.filter(user => 
+        user.nome.toLowerCase().includes(termoBusca) ||
+        user.sobrenome.toLowerCase().includes(termoBusca) ||
+        user.email.toLowerCase().includes(termoBusca)
+    );
+
+
+    renderizarUsuarios(usuariosFiltrados);
+}
 
 function irparacadastro(){
     telaCadastro.classList.remove("d-none");
@@ -33,6 +46,7 @@ function removerUsuario(id){
         renderizarUsuarios();
     }
 }
+
 
 let usuarioEmEdicaoId = null;
 
@@ -104,9 +118,15 @@ function editarUsuario(id) {
     }
 }
 
-function renderizarUsuarios(){
+function renderizarUsuarios(listaUsuarios = usuarios) {
     tabelaBody.innerHTML = "";
-    usuarios.forEach(user => {
+
+    if (listaUsuarios.length === 0) {
+        tabelaBody.innerHTML = "<tr><td colspan='4'>Nenhum usuário encontrado.</td></tr>";
+        return;
+    }
+
+    listaUsuarios.forEach(user => {
         const tr = document.createElement("tr");
         tr.innerHTML = `
             <td>${user.nome}</td>
@@ -116,7 +136,7 @@ function renderizarUsuarios(){
                 <button class="btn btn-warning" onclick="editarUsuario(${user.id})">Editar</button>
                 <button class="btn btn-danger" onclick="removerUsuario(${user.id})">Excluir</button>
             </td>
-            `;
+        `;
         tabelaBody.appendChild(tr);
     });
 }
@@ -133,6 +153,8 @@ function inicializacao(){
     renderizarUsuarios();
 }
 inicializacao();
+
+searchInput.addEventListener("input", filtrarUsuarios);
 
 const inputNome = document.getElementById("user-nome");
 const inputId = document.getElementById("user-id");
