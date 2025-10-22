@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repetições em JS</title>
+</head>
+<body>
+    
+    <h1>Repetições em JavaScript</h1>
+    <script>
+        let contador = 1;
+        while (contador <= 10) {
+            console.log(`Contador com while: ${contador}`);
+            contador++;
+        }
+
+        const notas = [7, 8, 9, 6, 5];
+        notas.forEach((nota, indice) => {
+            console.log(`Nota ${indice + 1}: ${nota}`);
+        });
+
+        const notasAjustadas = notas.map(nota => nota + 1);
+        console.log('Notas ajustadas:', notasAjustadas);
+
+        const notasAprovadas = notas.filter(nota => nota >= 7);
+        console.log('Notas aprovadas:', notasAprovadas);
+
+        const numeros = [1, 2, 3, 4, 5];
+        let tamanho = numeros.length;
+        let numerosPar = 0;
+        let numerosImpar = 0;
+        
+        Number.tamanho = tamanho;
+
+        while (tamanho > 0) {
+            if (numeros[tamanho - 1] % 2 === 0) {
+                numerosPar++;
+            }
+            if (numeros[tamanho - 1] % 2 != 0) {
+                numerosImpar++;
+            }
+            tamanho--;
+        }
+        console.log(`Números pares: ${numerosPar}`);
+        console.log(`Números ímpares: ${numerosImpar}`);
+    </script>
+
+</body>
+</html>
