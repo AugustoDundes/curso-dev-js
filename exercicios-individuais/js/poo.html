@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="produto-descricao">
+
+    </p>
+    <script>
+
+        const descricaoElemento = document.getElementById('produto-descricao');
+
+        // classe de produto
+        class Produto {
+            constructor(nome, preco, estoque) {
+                this.nome = nome;
+                this.preco = preco;
+                this.estoque = estoque;
+            }
+
+            descrever() {
+                return `Produto: ${this.nome}, Preço: R$${this.preco.toFixed(2)}, Estoque: ${this.estoque} unidades.`;
+            }
+
+            vender (qtd) {
+                if (qtd > this.estoque) {
+                    return `Estoque insuficiente para vender ${qtd} unidades de ${this.nome}.`;
+                }
+                this.estoque -= qtd;
+                return `Venda realizada: ${qtd} unidades de ${this.nome}. Estoque restante: ${this.estoque} unidades.`;
+            }
+        }
+
+        const caneca = new Produto('Caneca', 19.90, 10);
+        descricaoElemento.innerHTML = caneca.descrever();
+    </script>
+</body>
+</html>

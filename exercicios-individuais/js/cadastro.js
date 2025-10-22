@@ -12,6 +12,22 @@ const searchInput = document.getElementById("search-input");
 const btnDownload = document.getElementById("btn-download");
 const btnUpload = document.getElementById("btn-upload");
 
+function downloadJSON() {
+    const dataStr = JSON.stringify(usuarios, null, 2);
+
+    const blob = new Blob([dataStr], { type: "application/json" });
+
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "usuarios.json"; 
+    a.click();
+
+    URL.revokeObjectURL(url);
+}
+
+btnDownload.addEventListener("click", downloadJSON);
 
 function filtrarUsuarios() {
     const termoBusca = searchInput.value.toLowerCase(); 
@@ -24,6 +40,51 @@ function filtrarUsuarios() {
 
     renderizarUsuarios(usuariosFiltrados);
 }
+
+function uploadJSON(event) {
+    const file = event.target.files[0];
+
+    if (!file) {
+        alert("Nenhum arquivo selecionado.");
+        return;
+    }
+
+    const reader = new FileReader();
+
+    reader.onload = function (e) {
+        try {
+            const data = JSON.parse(e.target.result); 
+            if (Array.isArray(data)) {
+
+                data.forEach(user => {
+                    if (!usuarios.some(u => u.id === user.id)) {
+                        usuarios.push(user);
+                    }
+                });
+
+                salvarNoStorage();
+                renderizarUsuarios();
+                alert("Usuários adicionados com sucesso!");
+            } else {
+                alert("O arquivo JSON deve conter um array de usuários.");
+            }
+        } catch (error) {
+            alert("Erro ao processar o arquivo JSON. Verifique o formato.");
+        }
+    };
+
+    reader.readAsText(file);
+}
+
+btnUpload.addEventListener("click", () => {
+    const inputFile = document.createElement("input");
+    inputFile.type = "file";
+    inputFile.accept = "application/json";
+
+    inputFile.addEventListener("change", uploadJSON);
+
+    inputFile.click();
+});
 
 function irparacadastro(){
     telaCadastro.classList.remove("d-none");
