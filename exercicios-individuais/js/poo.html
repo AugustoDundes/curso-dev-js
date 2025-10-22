@@ -3,18 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
+    
 
-    <p id="produto-descricao">
+    <div class="mx-5 d-none" id="adicionar-produto">
+        <button id="ver-produtos" class="btn btn-warning">Ver produtos e estoque</button>
+        <input type="text" name="nome-produto" id="nome-produto" placeholder="Nome do produto">
+        <input type="number" name="preco-produto" id="preco-produto" placeholder="Preço do produto">
+        <input type="number" name="estoque-produto" id="estoque-produto" placeholder="Estoque do produto">
+        <button class="btn btn-primary mb-3 mt-3 mx-5" id="btn-adicionar-produto">Adicionar Produto</button>
+    </div>
 
+    <div class="mx-5" id="container">
+    <div>
+        <button id="adicionar-novo-produto" class="mx-5 btn btn-success">Adicionar um produto</button>
+    <button class="btn btn-secondary mb-3 mt-3 mx-5" id="mostrar-produtos">Produtos</button>
+    <p id="produto-descricao" class="mx-5 font-monospace d-none"></p>
+</div>
+<div class="mx-5">
+    <select name="selecionarProduto" id="selecionarProduto" >
+        <option disabled selected> -------- </option>
+    </select>
+    <input type="numver" name="add" id="add" placeholder="Adicionar estoque">
+    <button class="btn btn-primary mb-3 mt-3 mx-5" id="atualizar-estoque-add">Adicionar ao Estoque</button>
+    <p id="estoque-mensagem-repor"></p>
+</div>
+<div class="mx-5">
+<select name="selecionarProduto" id="selecionarProduto" >
+    <option disabled selected> -------- </option>
+</select>
+    <input type="number" name="vender" id="vender" placeholder="Vender estoque">
+    <button class="btn btn-primary mb-3 mt-3 mx-5" id="atualizar-estoque-venda">Realizar Venda</button>
+    <p id="estoque-mensagem-vender" class="mx-5 font-monospace">
+    </div>
     </p>
+</div>
     <script>
+        const adicionarProdutoDiv = document.getElementById('adicionar-produto');
+        const containerDiv = document.getElementById('container');
+        const btnAdicionarProduto = document.getElementById('btn-adicionar-produto');
+        const nomeProdutoInput = document.getElementById('nome-produto');
+        const precoProdutoInput = document.getElementById('preco-produto');
+        const estoqueProdutoInput = document.getElementById('estoque-produto');
+        const verProdutos = document.getElementById('ver-produtos').addEventListener('click', () => {
+            adicionarProdutoDiv.classList.add('d-none');
+            containerDiv.classList.remove('d-none');
+        });
+        const addNovoProduto = document.getElementById('adicionar-novo-produto').addEventListener('click', () => {
+            adicionarProdutoDiv.classList.remove('d-none');
+            containerDiv.classList.add('d-none');
+        });
 
         const descricaoElemento = document.getElementById('produto-descricao');
-
-        // classe de produto
+        const produtos = [];
         class Produto {
             constructor(nome, preco, estoque) {
                 this.nome = nome;
@@ -33,10 +77,31 @@
                 this.estoque -= qtd;
                 return `Venda realizada: ${qtd} unidades de ${this.nome}. Estoque restante: ${this.estoque} unidades.`;
             }
+
+            repor (qtd) {
+                this.estoque += qtd;
+                return `Estoque atualizado: ${this.estoque} unidades de ${this.nome}.`;
+            }
         }
 
+
+        const selecionarProduto = document.getElementById('selecionarProduto');
+        
+
+        document.getElementById('mostrar-produtos').addEventListener('click', () => {
+            descricaoElemento.classList.toggle('d-none');
+        });
+
+        const estoqueMensagemRepor = document.getElementById('estoque-mensagem-repor');
+
+
         const caneca = new Produto('Caneca', 19.90, 10);
+        const camiseta = new Produto('Camiseta', 39.90, 20);
+
         descricaoElemento.innerHTML = caneca.descrever();
+        descricaoElemento.innerHTML += '<br>' + camiseta.descrever();
+
+
     </script>
 </body>
 </html>
